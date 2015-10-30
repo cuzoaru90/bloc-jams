@@ -9,10 +9,11 @@
              points[index].style.WebkitTransform = "scaleX(1) translateY(0)";
            };
 
-           for (var i = 0; i < points.length; i++){
-             revealPoint(i);
-           }
+           // for (var i = 0; i < points.length; i++){
+           //   revealPoint(i);
+           // }
 
+           forEach(points, revealPoint);
 
         }
 
@@ -20,8 +21,8 @@
         window.onload = function() {
 
           if (window.innerHeight > 950) {
-            animatePoints(pointsArray);
-          }
+             animatePoints(pointsArray);
+           }
 
           var sellingPoints = document.getElementsByClassName('selling-points')[0];
           var scrollDistance = sellingPoints.getBoundingClientRect().top - window.innerHeight + 200;
