@@ -1,18 +1,20 @@
        var pointsArray = document.getElementsByClassName('point');
 
-           var animatePoints = function(points) {
-           
-           var revealPoint = function revealPoint(index) {
-             points[index].style.opacity = 1;
-             points[index].style.transform = "scaleX(1) translateY(0)";
-             points[index].style.msTransform = "scaleX(1) translateY(0)";
-             points[index].style.WebkitTransform = "scaleX(1) translateY(0)";
+           // Function now accepts point param instead of index param, style methods called on point instead of points[index]
+           // Previous code worked properly, but this solution code is better written
+           var revealPoint = function revealPoint(point) {
+             point.style.opacity = 1;
+             point.style.transform = "scaleX(1) translateY(0)";
+             point.style.msTransform = "scaleX(1) translateY(0)";
+             point.style.WebkitTransform = "scaleX(1) translateY(0)";
            };
+
+           var animatePoints = function(points) { 
 
            // for (var i = 0; i < points.length; i++){
            //   revealPoint(i);
            // }
-
+           
            forEach(points, revealPoint);
 
         }
