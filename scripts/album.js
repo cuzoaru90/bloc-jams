@@ -29,6 +29,20 @@ var albumPicasso = {
      ]
  };
 
+ var albumDinosaurs = {
+     name: 'Dinosaurs',
+     artist: 'Dinosaurs',
+     label: '',
+     year: 'Triassic period',
+     albumArtUrl: 'assets/images/album_covers/17.png',
+     songs: [
+         { name: 'T-Rex', length: '10:43' },
+         { name: 'Stegosaurus', length: '2:22' },
+         { name: 'Triceratops', length: '6:56'},
+         { name: 'Velociraptor', length: '15:08' },
+         { name: 'Spinosaurus', length: '9:32'}
+     ]
+ };
 
  var createSongRow = function(songNumber, songName, songLength) {
      var template =
@@ -41,6 +55,20 @@ var albumPicasso = {
  
      return template;
  };
+
+function toggleAlbums(artist){
+  
+   if (artist.firstChild.nodeValue == 'Pablo Picasso'){
+     setCurrentAlbum(albumMarconi);
+   }
+   else if (artist.firstChild.nodeValue == 'Guglielmo Marconi'){
+     setCurrentAlbum(albumDinosaurs);
+   }
+   else if (artist.firstChild.nodeValue == 'Dinosaurs'){
+     setCurrentAlbum(albumPicasso);
+   }
+
+}
 
 
   var setCurrentAlbum = function(album) {
@@ -65,7 +93,16 @@ var albumPicasso = {
          albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].name, album.songs[i].length);
      }
  };
+
  
  window.onload = function() {
-     setCurrentAlbum(albumPicasso);
+     setCurrentAlbum(albumDinosaurs);
  };
+
+var albumArtist = document.getElementsByClassName('album-view-artist')[0];
+var albumCover = document.getElementsByClassName('album-cover-art')[0];
+
+
+albumCover.addEventListener("click", function() { toggleAlbums(albumArtist); } );
+
+
