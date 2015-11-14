@@ -1,7 +1,10 @@
 {
   "name": "bloc-jams",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is the Bloc Jams app",
+  "engines": {
+    "node": "5.0.0"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +15,10 @@
   },
   "author": "Chuck Uzoaru",
   "license": "ISC",
+  "dependencies": {
+    "ejs": "2.3.3",
+    "express": "^4.13.3"
+  },
   "bugs": {
     "url": "https://github.com/cuzoaru90/bloc-jams/issues"
   },
