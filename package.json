@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,9 @@
     "ejs": "2.3.3",
     "express": "^4.13.3"
   },
+  "keywords": [
+    "heroku"
+  ],
   "bugs": {
     "url": "https://github.com/cuzoaru90/bloc-jams/issues"
   },
