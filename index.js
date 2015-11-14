@@ -1,29 +1,25 @@
 var express = require('express');
-var app = express();
+var app     = express();
+var path    = require('path');
 
-app.set('port', (process.env.PORT || 5000));
+app.use(express.static(__dirname + '/scripts/landing.js'));
+app.use(express.static(__dirname + '/styles/landing.css'));
 
-app.set('view engine', 'ejs');
-
-app.get('/', function(request, response) {
-  /*var result = ''
-  var times = process.env.TIMES || 3
-  for (i=0; i < times; i++)
-    result += "homepage string ";
-  response.send(result);*/
-  
-  // Render index html
-    
+app.get('/',function(req,res){
+  res.sendFile(path.join(__dirname+'/index.html'));
+  //__dirname : It will resolve to your project folder.
 });
 
-app.get('/collection', function(request, response) {
-  // Render collection html
+app.get('/collection.html',function(req,res){
+  res.sendFile(path.join(__dirname+'/collection.html'));
+  //__dirname : It will resolve to your project folder.
 });
 
-app.get('/album', function(request, response) {
-  // Render album html
+app.get('/album.html',function(req,res){
+  res.sendFile(path.join(__dirname+'/album.html'));
+  //__dirname : It will resolve to your project folder.
 });
 
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});
+app.listen(3000);
+
+console.log("Running at Port 3000");
